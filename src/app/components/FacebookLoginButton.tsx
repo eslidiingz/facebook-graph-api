@@ -1,6 +1,9 @@
 // components/FacebookLoginButton.tsx
 'use client';
 
+import Head from "next/head";
+import Script from "next/script";
+
 const FacebookLoginButton = () => {
     const handleFacebookLogin = () => {
         window.FB.login(
@@ -31,7 +34,17 @@ const FacebookLoginButton = () => {
         );
     };
 
-    return <button onClick={handleFacebookLogin}>Login with Facebook</button>;
+    return <>
+        <Script
+            id="facebook-sdk"
+            src="https://connect.facebook.net/en_US/sdk.js"
+            strategy="lazyOnload"
+            onLoad={() =>
+                console.log(`script loaded correctly, window.FB has been populated`)
+            }
+        />
+        <button onClick={handleFacebookLogin}>Login with Facebook</button>
+    </>;
 };
 
 export default FacebookLoginButton;

@@ -17,17 +17,22 @@ const FacebookSDKInitializer = () => {
             window.FB.AppEvents.logPageView();
         };
 
-        (function (d, s, id) {
-            var js,
-                fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) {
-                return;
-            }
-            js = d.createElement(s);
-            js.id = id;
-            js.src = 'https://connect.facebook.net/en_US/sdk.js';
-            fjs.parentNode.insertBefore(js, fjs);
-        })(document, 'script', 'facebook-jssdk');
+        // (function (d, s, id) {
+        //     console.log(d, s, id)
+
+        //     var js, fjs = d.getElementsByTagName(s)[0];
+        //     console.log("%c%s", "background: #04b8f4; color: #000000", "🚀 ~ file: FacebookSDKInitializer.tsx:24 ~ useEffect ~ fjs:", fjs)
+        //     console.log("%c%s", "background: #04b8f4; color: #000000", "🚀 ~ file: FacebookSDKInitializer.tsx:24 ~ useEffect ~ js:", js)
+
+
+        //     if (d.getElementById(id)) {
+        //         return;
+        //     }
+        //     js = d.createElement(s);
+        //     js.id = id;
+        //     js.src = 'https://connect.facebook.net/en_US/sdk.js';
+        //     fjs.parentNode.insertBefore(js, fjs);
+        // })(document, 'script', 'facebook-jssdk');
     }, []);
 
     return null;
